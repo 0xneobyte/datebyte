@@ -73,14 +73,14 @@ export default function EnchantingDateProposalApp() {
     // Step 0: Initial Question
     <motion.div key="step0" className="text-center" {...fadeInUp}>
       <h1 className="text-4xl font-bold mb-6 text-pink-600">
-        Will you go on a date with me?
+        May I Take You On a Date?
       </h1>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media1.tenor.com/m/59regbBE_kwAAAAd/tkthao219-bubududu.gif"
-        alt="Cute bear proposal gif"
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHVmd2VtOGYzMnJ3MDlhNmo5cDJ1cjFtazMycWF2ZGhueW5qZmVuMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XQiJigZpYQ9dKrrEbv/giphy.gif"
+        alt="butt cheeks"
         className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
       />
       <div className="space-x-4">
@@ -91,7 +91,7 @@ export default function EnchantingDateProposalApp() {
           }}
           className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
         >
-          Yes, I&apos;d love to!
+          Freak yes!
         </Button>
         <Dialog>
           <DialogTrigger asChild>
@@ -99,24 +99,24 @@ export default function EnchantingDateProposalApp() {
               variant="outline"
               className="border-pink-300 text-pink-500 hover:bg-pink-100 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              No
+              Freak no!
             </Button>
           </DialogTrigger>
           <DialogContent className="bg-pink-50 border-2 border-pink-300">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-pink-600">
-                There is no &quot;NOOOOOO&quot;
+                Ummmm, what the freak..
               </DialogTitle>
               <DialogDescription className="text-lg text-pink-500">
-                You must come with me!
+                I&apos;ll pretend I didn&apos;t see that...
               </DialogDescription>
             </DialogHeader>
             <motion.img
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://media1.tenor.com/m/2XJN2YEYbIAAAAAd/peach-and.gif"
-              alt="Excited bear gif"
+              src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTliemtmNmxwNnppOHphNjJiYXBnYTdqdWMyY3ZiZmVlOXp0eHA1MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/atFQviNRdKVxqAYyRK/giphy.gif"
+              alt="Sad Cat Gif"
               className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
             />{" "}
             <Button
@@ -126,7 +126,7 @@ export default function EnchantingDateProposalApp() {
               }}
               className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              Okay, I&apos;ll come!
+              Ok I take it back...
             </Button>
           </DialogContent>
         </Dialog>
@@ -136,14 +136,14 @@ export default function EnchantingDateProposalApp() {
     // Step 1: Date and Time Selection
     <motion.div key="step1" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        YEYYYYYYYY, WHEN SHALL WE GO?
+        YEEEESSSSSSS FINALLY, WHEN WE FEELING? :3
       </h2>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media.tenor.com/WiQQRwR2QFAAAAAi/cute-panda.gif"
-        alt="Excited bear gif"
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmgyZWt4enVjMzQxYmUyN3Q0YXJ0cWRjNTRrOTZvZXVyaTZ1b2Z4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/NMlz9mhcZUI1GDd40H/giphy.gif"
+        alt="67"
         className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
       />
       <div className="mb-6 p-4 bg-white rounded-lg shadow-lg">
@@ -174,7 +174,7 @@ export default function EnchantingDateProposalApp() {
         disabled={!answers.date || !answers.time}
         className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 animate-pulse disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        <Clock className="mr-2 h-5 w-5" /> Set our date!{" "}
+        <Clock className="mr-2 h-5 w-5" /> Set da date!{" "}
         <Heart className="ml-2 h-5 w-5" />
       </Button>
     </motion.div>,
@@ -182,15 +182,15 @@ export default function EnchantingDateProposalApp() {
     // Step 2: Food Selection
     <motion.div key="step2" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        What shall we feast on, my dear?
+        What food are you feeling? :3
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          { name: "Lasagna", icon: <Utensils /> },
-          { name: "Chicken Pie", icon: <Utensils /> },
-          { name: "Chicken Shawarma", icon: <Utensils /> },
-          { name: "Snack Platter", icon: <Coffee /> },
-          { name: "Mix rice", icon: <Utensils /> },
+          { name: "Korean Food", icon: <Utensils /> },
+          { name: "Italian Food", icon: <Utensils /> },
+          { name: "Japanese Food", icon: <Utensils /> },
+          { name: "Thai Food", icon: <Utensils /> },
+          { name: "Chinese Food", icon: <Utensils /> },
         ].map(({ name, icon }) => (
           <motion.button
             key={name}
@@ -218,25 +218,25 @@ export default function EnchantingDateProposalApp() {
         disabled={answers.food.length === 0}
         className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Looks delicious!
+        Mmmmm... ngh!
       </Button>
     </motion.div>,
 
-    // Step 3: Movie Selection
+    // Step 3:  Selection
     <motion.div key="step3" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        What shall we watch together?
+        What activity calls to you? :3
       </h2>
       <div className="grid grid-cols-2 gap-6 mb-6">
         {[
-          "The Notebook",
-          "La La Land",
-          "Titanic",
-          "Pride and Prejudice",
-          "Anyone But You",
-          "Past Lives",
-          "Love at First Sight",
-          "Through My Window 3",
+          "Ice Skating",
+          "Escape Room..",
+          "Freaked Out at Top Golf",
+          "Stay In",
+          "Mastering a Craft",
+          "Watch a Movie",
+          "Bowling P2",
+          "Music Room",
           "Something else",
         ].map((movie) => (
           <motion.button
@@ -246,9 +246,7 @@ export default function EnchantingDateProposalApp() {
             className="bg-white text-pink-600 hover:bg-pink-100 font-bold py-4 px-6 rounded-lg shadow-md transition-colors duration-300"
             onClick={() => {
               if (movie === "Something else") {
-                const customMovie = prompt(
-                  "What movie would you like to watch?"
-                );
+                const customMovie = prompt("What do you have in mind :P");
                 if (customMovie) handleAnswer("movie", customMovie);
               } else {
                 handleAnswer("movie", movie);
@@ -265,7 +263,7 @@ export default function EnchantingDateProposalApp() {
     // Step 4: Excitement Rating
     <motion.div key="step4" className="text-center" {...fadeInUp}>
       <h2 className="text-3xl font-bold mb-6 text-pink-600">
-        How excited are you for our date?
+        How are you feeling about the date? :3
       </h2>
       <div className="max-w-md mx-auto mb-6 p-4 bg-white rounded-lg shadow-lg">
         <motion.div className="relative h-6 mb-4">
@@ -287,8 +285,8 @@ export default function EnchantingDateProposalApp() {
           }
         />
         <div className="flex justify-between mt-2">
-          <span>Can&apos;t wait!</span>
-          <span>Super duper excited!</span>
+          <span>It&apos;s everywhere bro</span>
+          <span>I'm gonna pee pee myself</span>
         </div>
       </div>
       <motion.div
@@ -297,7 +295,7 @@ export default function EnchantingDateProposalApp() {
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
-        Excitement level: {answers.excitement}%
+        Freaked out level: {answers.excitement}%
       </motion.div>
       <Button
         onClick={() => {
@@ -306,14 +304,14 @@ export default function EnchantingDateProposalApp() {
         }}
         className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
       >
-        Let&apos;s make it official!
+        Yipee it&apos;s official!
       </Button>
     </motion.div>,
 
     // Step 5: Final Message
     <motion.div key="step5" className="text-center" {...fadeInUp}>
       <h2 className="text-4xl font-bold mb-6 text-pink-600">
-        It&apos;s a date, my love!
+        It&apos;s a date dookie bear!
       </h2>
       <p className="text-xl mb-2 text-pink-500">
         I can&apos;t wait to see you on:
@@ -325,8 +323,8 @@ export default function EnchantingDateProposalApp() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media.tenor.com/yvUCU981VYoAAAAj/mochi-cat-goma.gif"
-        alt="Excited bear gif"
+        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDZyMW5vanllMG13ajdsbGUybTR6eDA2NGRoeXV2MGNremU2ejJnMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c3EItuzhHN9MNZnkuo/giphy.gif"
+        alt="Feet"
         className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-lg"
       />{" "}
       <motion.div
@@ -342,10 +340,10 @@ export default function EnchantingDateProposalApp() {
         transition={{ delay: 1, duration: 1 }}
         className="mt-6 text-lg text-pink-500"
       >
-        <p>We&apos;ll enjoy some delicious {answers.food.join(", ")}.</p>
-        <p>Then we&apos;ll watch &quot;{answers.movie}&quot; together.</p>
+        <p>We&apos;ll munch on some {answers.food.join(", ")}.</p>
+        <p>Then we&apos;ll dabble in &quot;{answers.movie}&quot; together.</p>
         <p className="mt-4 font-bold">
-          Your excitement level: {answers.excitement}/100
+          Your freaked out level: {answers.excitement}/100
         </p>
       </motion.div>
     </motion.div>,
@@ -353,22 +351,22 @@ export default function EnchantingDateProposalApp() {
 
   useEffect(() => {
     const saveAnswers = async () => {
-      console.log('Saved answers:', answers);
-      
+      console.log("Saved answers:", answers);
+
       // Save to localStorage
-      localStorage.setItem('dateProposalAnswers', JSON.stringify(answers));
+      localStorage.setItem("dateProposalAnswers", JSON.stringify(answers));
 
       // Send to your email
       try {
-        await fetch('/api/send-response', {
-          method: 'POST',
+        await fetch("/api/send-response", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(answers)
+          body: JSON.stringify(answers),
         });
       } catch (error) {
-        console.error('Failed to send response:', error);
+        console.error("Failed to send response:", error);
       }
     };
 
@@ -378,7 +376,7 @@ export default function EnchantingDateProposalApp() {
   }, [step, answers, steps.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 to-pink-100 flex items-center justify-center p-4">
       <Suspense fallback={null}>
         <HeartBackground />
       </Suspense>
