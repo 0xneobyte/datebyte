@@ -1,45 +1,38 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 
+// Pre-generated fixed positions to avoid hydration mismatch
+const HEARTS = [
+  { left: 15, delay: 0, scale: 0.6, duration: 12, color: 'text-pink-300' },
+  { left: 25, delay: 1, scale: 0.7, duration: 14, color: 'text-rose-300' },
+  { left: 35, delay: 2, scale: 0.5, duration: 16, color: 'text-pink-200/80' },
+  { left: 45, delay: 0.5, scale: 0.8, duration: 18, color: 'text-rose-200/80' },
+  { left: 55, delay: 1.5, scale: 0.6, duration: 13, color: 'text-pink-300' },
+  { left: 65, delay: 2.5, scale: 0.7, duration: 15, color: 'text-rose-300' },
+  { left: 75, delay: 0.3, scale: 0.5, duration: 17, color: 'text-pink-200/80' },
+  { left: 85, delay: 1.8, scale: 0.75, duration: 14, color: 'text-rose-200/80' },
+  { left: 10, delay: 3, scale: 0.6, duration: 16, color: 'text-pink-300' },
+  { left: 90, delay: 0.8, scale: 0.65, duration: 12, color: 'text-rose-300' },
+]
+
 const HeartBackground = () => {
-  const [hearts, setHearts] = useState<Array<{x: number, y: number, scale: number, duration: number}>>([])
-
-  useEffect(() => {
-    const newHearts = Array(30).fill(null).map(() => ({
-      x: Math.random() * window.innerWidth,
-      y: window.innerHeight + 100,
-      scale: Math.random() * 0.5 + 0.5,
-      duration: Math.random() * 20 + 10
-    }))
-    setHearts(newHearts)
-  }, [])
-
-  if (hearts.length === 0) return null
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {hearts.map((heart, i) => (
+      {HEARTS.map((h, i) => (
         <motion.div
           key={i}
-          className="absolute text-pink-300"
-          initial={{ 
-            x: heart.x,
-            y: heart.y,
-            scale: heart.scale
-          }}
-          animate={{
-            y: -100,
-            transition: {
-              duration: heart.duration,
-              repeat: Infinity,
-              ease: "linear"
-            }
-          }}
+          className={`${h.color} absolute`} 
+          style={{ left: `${h.left}%`, bottom: -40 }}
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: -1200, opacity: [0, 0.9, 0] }}
+          transition={{ delay: h.delay, duration: h.duration, repeat: Infinity, ease: 'linear' }}
         >
-          <Heart size={24} fill="currentColor" />
+          <div style={{ transform: `scale(${h.scale})` }} className="filter blur-sm opacity-90">
+            <Heart size={28} fill="currentColor" />
+          </div>
         </motion.div>
       ))}
     </div>

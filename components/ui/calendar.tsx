@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Heart } from "lucide-react"
 import { DayPicker } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
@@ -18,50 +18,43 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
-      className={cn("p-3", className)}
+      className={cn("p-6 bg-gradient-to-b from-white/50 to-pink-50/30 rounded-2xl backdrop-blur-sm", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+        months: "flex flex-col sm:flex-row justify-center gap-8",
         month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-medium",
-        nav: "space-x-1 flex items-center",
+        caption: "flex justify-center pt-1 relative items-center mb-6",
+        caption_label: "text-lg font-playfair font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-rose-500",
+        nav: "space-x-2 flex items-center",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+          "h-8 w-8 bg-white/80 p-0 text-pink-600 hover:bg-pink-50 border-pink-200 hover:border-pink-300 transition-all duration-200"
         ),
-        nav_button_previous: "absolute left-1",
-        nav_button_next: "absolute right-1",
-        table: "w-full border-collapse space-y-1",
-        head_row: "flex",
-        head_cell:
-          "text-muted-foreground rounded-md w-8 font-normal text-[0.8rem]",
-        row: "flex w-full mt-2",
+        nav_button_previous: "absolute left-0",
+        nav_button_next: "absolute right-0",
+        table: "w-full border-collapse space-y-2",
+        head_row: "flex gap-2",
+        head_cell: "text-pink-600 font-playfair rounded-md w-9 font-semibold text-xs tracking-wide",
+        row: "flex w-full gap-2",
         cell: cn(
-          "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 [&:has([aria-selected])]:bg-accent [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected].day-range-end)]:rounded-r-md",
-          props.mode === "range"
-            ? "[&:has(>.day-range-end)]:rounded-r-md [&:has(>.day-range-start)]:rounded-l-md first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md"
-            : "[&:has([aria-selected])]:rounded-md"
+          "relative p-0 text-center text-sm [&:has([aria-selected])]:rounded-xl"
         ),
         day: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-8 w-8 p-0 font-normal aria-selected:opacity-100"
+          "h-9 w-9 p-0 font-medium text-pink-700 hover:bg-pink-100 hover:text-pink-800 transition-all duration-150"
         ),
         day_range_start: "day-range-start",
         day_range_end: "day-range-end",
-        day_selected:
-          "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        day_today: "bg-accent text-accent-foreground",
-        day_outside:
-          "day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
-        day_disabled: "text-muted-foreground opacity-50",
-        day_range_middle:
-          "aria-selected:bg-accent aria-selected:text-accent-foreground",
+        day_selected: "bg-gradient-to-br from-pink-500 to-rose-500 text-white font-semibold shadow-lg shadow-pink-300/40 hover:from-pink-600 hover:to-rose-600",
+        day_today: "text-pink-700 font-normal",
+        day_outside: "text-pink-300/60",
+        day_disabled: "text-pink-300/40 opacity-40",
+        day_range_middle: "bg-pink-100/50 text-pink-700",
         day_hidden: "invisible",
         ...classNames,
       }}
       components={{
-        IconLeft: () => <ChevronLeft className="h-4 w-4" />,
-        IconRight: () => <ChevronRight className="h-4 w-4" />,
+        IconLeft: () => <ChevronLeft className="h-5 w-5 text-pink-600" />,
+        IconRight: () => <ChevronRight className="h-5 w-5 text-pink-600" />,
       }}
       {...props}
     />
