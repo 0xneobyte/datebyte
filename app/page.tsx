@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Star, Coffee, Film, Utensils, Clock } from "lucide-react";
+import { Heart, Coffee, Film, Utensils, Clock } from "lucide-react";
 import confetti from "canvas-confetti";
 import ThemedCard from "@/components/ThemedCard";
 import Sparkles from "@/components/Sparkles";
