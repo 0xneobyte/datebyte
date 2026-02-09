@@ -84,13 +84,13 @@ export default function EnchantingDateProposalApp() {
   };
 
   const formatDate = (d: Date | null) => {
-    if (!d) return ""
+    if (!d) return "";
     try {
-      return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+      return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
     } catch (e) {
-      return d.toDateString()
+      return d.toDateString();
     }
-  }
+  };
 
   const steps = [
     
