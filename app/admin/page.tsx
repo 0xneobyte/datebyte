@@ -10,6 +10,7 @@ interface StoredResponse {
     time: string;
     food: string[];
     movie: string;
+    activtiy: string;
     excitement: number;
   };
 }
