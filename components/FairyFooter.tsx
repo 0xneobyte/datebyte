@@ -9,7 +9,6 @@ export default function FairyFooter() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        Made with ❤️
       </motion.div>
     </footer>
   )
