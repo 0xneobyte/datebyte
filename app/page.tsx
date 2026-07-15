@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Coffee, Film, Utensils, Clock, HelpCircle, Gamepad2, ShoppingBag, PlusCircle, ArrowRight } from "lucide-react";
+import { Heart, Coffee, Utensils, Clock, HelpCircle, Gamepad2, PlusCircle, ArrowRight } from "lucide-react";
 import confetti from "canvas-confetti";
 import ThemedCard from "@/components/ThemedCard";
 import Sparkles from "@/components/Sparkles";
@@ -91,7 +91,7 @@ export default function EnchantingDateProposalApp() {
     if (!d) return "";
     try {
       return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-    } catch (e) {
+    } catch {
       return d.toDateString();
     }
   };
@@ -129,7 +129,7 @@ export default function EnchantingDateProposalApp() {
               variant="outline"
               className="border-purple-300 text-purple-500 hover:bg-purple-100 font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              'yoko nga
+              &apos;yoko nga
             </Button>
           </DialogTrigger>
           <DialogContent className="bg-purple-50 border-2 border-purple-300">
@@ -276,78 +276,79 @@ export default function EnchantingDateProposalApp() {
 
      
     <motion.div key="step3" className="text-center" {...fadeInUp}>
-      <StepCard stepNumber={3} totalSteps={5}></StepCard>
+  <StepCard stepNumber={3} totalSteps={5}>
     <h2 className="text-3xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-fuchsia-600">
       What do you wanna do after?
     </h2>
+  </StepCard>
 
-  {!showInput ? (
-    <div className="grid grid-cols-2 gap-6 mb-6">
-      {[
-        { name: "Bowling", icon: <HelpCircle className="mx-auto mb-2 w-6 h-6" /> }, // Or use a custom SVG / icon of choice
-        { name: "Arcade", icon: <Gamepad2 className="mx-auto mb-2 w-6 h-6" /> },
-        { name: "Something else", icon: <PlusCircle className="mx-auto mb-2 w-6 h-6" /> },
-      ].map((activity) => (
-        <motion.button
-          key={activity.name}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-white text-purple-600 hover:bg-purple-100 font-bold py-4 px-6 rounded-lg shadow-md transition-colors duration-300 flex flex-col items-center justify-center border border-purple-100"
-          onClick={() => {
-            if (activity.name === "Something else") {
-              setShowInput(true);
-            } else {
-              handleAnswer("activity", activity.name);
-            }
-          }}
+      {!showInput ? (
+        <div className="grid grid-cols-2 gap-6 mb-6">
+          {[
+            { name: "Bowling", icon: <HelpCircle className="mx-auto mb-2 w-6 h-6" /> }, // Or use a custom SVG / icon of choice
+            { name: "Arcade", icon: <Gamepad2 className="mx-auto mb-2 w-6 h-6" /> },
+            { name: "Something else", icon: <PlusCircle className="mx-auto mb-2 w-6 h-6" /> },
+          ].map((activity) => (
+            <motion.button
+              key={activity.name}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-purple-600 hover:bg-purple-100 font-bold py-4 px-6 rounded-lg shadow-md transition-colors duration-300 flex flex-col items-center justify-center border border-purple-100"
+              onClick={() => {
+                if (activity.name === "Something else") {
+                  setShowInput(true);
+                } else {
+                  handleAnswer("activity", activity.name);
+                }
+              }}
+            >
+              {activity.icon}
+              {activity.name}
+            </motion.button>
+          ))}
+        </div>
+      ) : (
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-purple-100 mb-6"
         >
-          {activity.icon}
-          {activity.name}
-        </motion.button>
-      ))}
-    </div>
-  ) : (
-    <motion.div 
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md border border-purple-100 mb-6"
-    >
-      <label className="block text-purple-600 font-bold mb-3 text-lg">
-        What do you have in mind? 💭
-      </label>
-      <div className="flex gap-2">
-        <input
-          type="text"
-          value={customInput}
-          onChange={(e) => setCustomInput(e.target.value)}
-          className="flex-1 px-4 py-2 border border-purple-200 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-purple-700 bg-purple-50"
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && customInput.trim()) {
-              handleAnswer("activity", customInput);
-            }
-          }}
-        />
-        <button
-          onClick={() => {
-            if (customInput.trim()) {
-              handleAnswer("activity", customInput);
-            }
-          }}
-          disabled={!customInput.trim()}
-          className="bg-purple-500 hover:bg-purple-600 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300"
-        >
-          <ArrowRight className="w-6 h-6" />
-        </button>
-      </div>
-      <button 
-        onClick={() => setShowInput(false)}
-        className="text-xs text-purple-400 hover:text-purple-600 mt-4 underline block mx-auto"
-      >
-        Go back to options
-      </button>
-    </motion.div>
-  )}
-</motion.div>,
+          <label className="block text-purple-600 font-bold mb-3 text-lg">
+            What do you have in mind? 💭
+          </label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={customInput}
+              onChange={(e) => setCustomInput(e.target.value)}
+              className="flex-1 px-4 py-2 border border-purple-200 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-purple-700 bg-purple-50"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && customInput.trim()) {
+                  handleAnswer("activity", customInput);
+                }
+              }}
+            />
+            <button
+              onClick={() => {
+                if (customInput.trim()) {
+                  handleAnswer("activity", customInput);
+                }
+              }}
+              disabled={!customInput.trim()}
+              className="bg-purple-500 hover:bg-purple-600 disabled:opacity-50 text-white p-2 rounded-full transition-all duration-300"
+            >
+              <ArrowRight className="w-6 h-6" />
+            </button>
+          </div>
+          <button 
+            onClick={() => setShowInput(false)}
+            className="text-xs text-purple-400 hover:text-purple-600 mt-4 underline block mx-auto"
+          >
+            Go back to options
+          </button>
+        </motion.div>
+      )}
+    </motion.div>,
 
     
     <motion.div key="step4" className="text-center" {...fadeInUp}>
@@ -393,7 +394,7 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step5" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={5} totalSteps={5}>
       <h2 className="text-5xl sm:text-6xl font-playfair font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-red-500">
-        Legit ba'to o legit bato?
+        Legit ba&apos;to o legit bato?
       </h2>
       <p className="text-lg text-rose-500 mb-3 font-poppins">
         I can&apos;t wait to see you on:
