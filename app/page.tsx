@@ -100,7 +100,7 @@ export default function EnchantingDateProposalApp() {
     
     <motion.div key="step0" className="text-center" {...fadeInUp}>
       <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-red-500">
-        My dearest, purple enthusiast
+        My dearest, Rana
         <span className="block mt-4 text-2xl sm:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-red-600">
               Would you go see Spider-Man: Brand New Day with me?
         </span>
@@ -167,14 +167,14 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step1" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={1} totalSteps={5}>
       <h2 className="text-4xl sm:text-5xl font-playfair font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-red-600">
-        Yay! When tayo
+        Yay! When ka available
       </h2>
       <motion.img
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media.tenor.com/WiQQRwR2QFAAAAAi/cute-panda.gif"
-        alt="Excited bear gif"
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHlnMGQ5OTFpMWJ3dzA3ZGwwZzZmamlqZXoxbmc1MGN3MjllMjd5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wgKDTcjWHrsLb8loKQ/giphy.gif"
+        alt="spider-man running"
         className="w-full max-w-md mx-auto mb-6 rounded-2xl shadow-2xl shadow-purple-300/30"
       />
       <div className="mb-6 p-4 bg-white rounded-lg shadow-lg">
@@ -212,8 +212,8 @@ export default function EnchantingDateProposalApp() {
           </Select>
 
           <Select onValueChange={(val) => setAmpm(val)}>
-            <SelectTrigger className="w-20 bg-purple-50 border-purple-200 text-purple-700">
-              <SelectValue placeholder="AM/PM" />
+            <SelectTrigger className="w-30 bg-purple-50 border-purple-200 text-purple-700">
+              <SelectValue placeholder="Umaga o Gabby" />
             </SelectTrigger>
             <SelectContent>
               {['AM', 'PM'].map((ap) => (
@@ -246,8 +246,9 @@ export default function EnchantingDateProposalApp() {
         {[
           { name: "Coffee or Tea, Kapit bisig!", icon: <Coffee className="w-6 h-6" /> },
           { name: "Burger", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Wings", icon: <Utensils className="w-6 h-6" /> },
-          { name: "Fries", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Pizza", icon: <Utensils className="w-6 h-6" /> },
+          { name: "French Fries", icon: <Utensils className="w-6 h-6" /> },
+          { name: "Fried Chicken?", icon: <Utensils className="w-6 h-6" /> },
           { name: "''Kahit ano''", icon: <Utensils className="w-6 h-6" /> },
         ].map(({ name, icon }) => (
           <SelectButton
@@ -285,7 +286,7 @@ export default function EnchantingDateProposalApp() {
       {!showInput ? (
         <div className="grid grid-cols-2 gap-6 mb-6">
           {[
-            { name: "Bowling", icon: <HelpCircle className="mx-auto mb-2 w-6 h-6" /> }, // Or use a custom SVG / icon of choice
+            { name: "Bowling", icon: <Clock className="mx-auto mb-2 w-6 h-6" /> }, // Or use a custom SVG / icon of choice
             { name: "Arcade", icon: <Gamepad2 className="mx-auto mb-2 w-6 h-6" /> },
             { name: "Something else", icon: <PlusCircle className="mx-auto mb-2 w-6 h-6" /> },
           ].map((activity) => (
