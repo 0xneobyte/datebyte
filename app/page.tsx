@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Heart, Coffee, Utensils, Clock, HelpCircle, Gamepad2, PlusCircle, ArrowRight } from "lucide-react";
+import { Heart, Coffee, Utensils, Clock, Gamepad2, PlusCircle, ArrowRight } from "lucide-react";
 import confetti from "canvas-confetti";
 import ThemedCard from "@/components/ThemedCard";
 import Sparkles from "@/components/Sparkles";
