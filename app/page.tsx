@@ -100,7 +100,7 @@ export default function EnchantingDateProposalApp() {
     
     <motion.div key="step0" className="text-center" {...fadeInUp}>
       <h1 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-red-500">
-        My dearest, Rana
+        My dearest, gabbuh
         <span className="block mt-4 text-2xl sm:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-red-600">
               Would you go see Spider-Man: Brand New Day with me?
         </span>
@@ -279,7 +279,7 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step3" className="text-center" {...fadeInUp}>
   <StepCard stepNumber={3} totalSteps={5}>
     <h2 className="text-3xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-fuchsia-600">
-      What do you wanna do after?
+      Ano, tara?
     </h2>
   </StepCard>
 
@@ -289,6 +289,8 @@ export default function EnchantingDateProposalApp() {
             { name: "Bowling", icon: <Clock className="mx-auto mb-2 w-6 h-6" /> }, // Or use a custom SVG / icon of choice
             { name: "Arcade", icon: <Gamepad2 className="mx-auto mb-2 w-6 h-6" /> },
             { name: "Something else", icon: <PlusCircle className="mx-auto mb-2 w-6 h-6" /> },
+            { name: "Uwi na q"},
+
           ].map((activity) => (
             <motion.button
               key={activity.name}
@@ -432,7 +434,11 @@ export default function EnchantingDateProposalApp() {
         className="mt-8 space-y-3 text-lg text-purple-600 font-poppins"
       >
         <p className="text-base">We&apos;ll enjoy some delicious <span className="font-semibold">{answers.food.join(", ")}</span>.</p>
-        <p className="text-base">Then we&apos;ll do <span className="font-semibold italic">&quot;{answers.activity}&quot;</span> together.</p>
+        {answers.activity === "Uwi na q" ? (
+          <p className="text-base font-semibold italic text-purple-700">Pagkatapos natin kumain, hatid agad kita pauwi safely! 🏠✨</p>
+        ) : (
+          <p className="text-base">Then we&apos;ll do <span className="font-semibold italic">&quot;{answers.activity}&quot;</span> together.</p>
+        )}
         <p className="text-xl font-playfair font-bold mt-6">
           Your excitement level: <span className="text-purple-600">{answers.excitement}/100</span>
         </p>
@@ -468,7 +474,7 @@ export default function EnchantingDateProposalApp() {
   }, [step, answers, steps.length]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-red-50 to-purple-100 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-6">
       <Suspense fallback={null}>
         <HeartBackground />
       </Suspense>
