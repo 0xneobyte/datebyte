@@ -397,7 +397,7 @@ export default function EnchantingDateProposalApp() {
     <motion.div key="step5" className="text-center" {...fadeInUp}>
       <StepCard stepNumber={5} totalSteps={5}>
       <h2 className="text-5xl sm:text-6xl font-playfair font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-red-500">
-        Legit ba&apos;to o legit bato?
+        oki, see u gabeee!
       </h2>
       <p className="text-lg text-rose-500 mb-3 font-poppins">
         I can&apos;t wait to see you on:
@@ -416,8 +416,8 @@ export default function EnchantingDateProposalApp() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        src="https://media1.tenor.com/m/qyOPpMVREs8AAAAC/running-man-bato-dela-rosa.gif"
-        alt="legit bato"
+        src="https://media1.tenor.com/m/M0ARBQlZe10AAAAd/bee-minecraft.gif"
+        alt="gabeee"
         className="w-full max-w-md mx-auto mb-6 rounded-2xl shadow-2xl shadow-purple-300/30"
       />
       <motion.div
