@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: '💕 New Date Response!',
+      subject: 'YOU HAVE MAIL!',
       html: `
         <h1>She responded!</h1>
         <p>Date: ${new Date(data.date).toLocaleDateString()}</p>
