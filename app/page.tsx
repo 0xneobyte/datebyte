@@ -435,7 +435,7 @@ export default function EnchantingDateProposalApp() {
       >
         <p className="text-base">We&apos;ll enjoy some delicious <span className="font-semibold">{answers.food.join(", ")}</span>.</p>
         {answers.activity === "Uwi na q" ? (
-          <p className="text-base font-semibold italic text-purple-700">Pagkatapos natin kumain, hatid agad kita pauwi safely! 🏠✨</p>
+          <p className="text-base font-semibold italic text-purple-700">Pagkatapos natin kumain, hatid agad kita pauwi safely!</p>
         ) : (
           <p className="text-base">Then we&apos;ll do <span className="font-semibold italic">&quot;{answers.activity}&quot;</span> together.</p>
         )}
