@@ -286,7 +286,7 @@ export default function EnchantingDateProposalApp() {
       {!showInput ? (
         <div className="grid grid-cols-2 gap-6 mb-6">
           {[
-            { name: "Bowling", icon: <Clock className="mx-auto mb-2 w-6 h-6" /> }, // Or use a custom SVG / icon of choice
+            { name: "Bowling",}, // Or use a custom SVG / icon of choice
             { name: "Arcade", icon: <Gamepad2 className="mx-auto mb-2 w-6 h-6" /> },
             { name: "Something else", icon: <PlusCircle className="mx-auto mb-2 w-6 h-6" /> },
             { name: "Uwi na q"},
@@ -435,7 +435,7 @@ export default function EnchantingDateProposalApp() {
       >
         <p className="text-base">We&apos;ll enjoy some delicious <span className="font-semibold">{answers.food.join(", ")}</span>.</p>
         {answers.activity === "Uwi na q" ? (
-          <p className="text-base font-semibold italic text-purple-700">Pagkatapos natin kumain, hatid agad kita pauwi safely</p>
+          <p className="text-base font-semibold italic text-purple-700">Pagkatapos natin kumain, hatid agad kita pauwi safely! 🏠✨</p>
         ) : (
           <p className="text-base">Then we&apos;ll do <span className="font-semibold italic">&quot;{answers.activity}&quot;</span> together.</p>
         )}

@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         <p>Date: ${new Date(data.date).toLocaleDateString()}</p>
         <p>Time: ${data.time}</p>
         <p>Food: ${data.food.join(', ')}</p>
-        <p>Activity: ${data.activity}</p>
+        <p>Activity: ${data.activity === 'Uwi na q' ? "Uuwi na s'ya" : data.activity}</p>
         <p>Excitement: ${data.excitement}/100</p>
       `,
       attachments: [{
