@@ -163,6 +163,6 @@ If you find this project helpful:
 
 <div align="center">
 
-**Made with ❤️ by [Neo](https://github.com/tharushkadinujaya05)**
+**Made with ❤️ by [Neo](https://buymeacoffee.com/0xneobyte)**
 
 </div>
